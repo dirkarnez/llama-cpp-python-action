@@ -8,5 +8,5 @@ services:
     volumes:
       - ./models:/models # Required for extra OCR languages
     environment:
-      - MODEL=/models/llama-model.gguf
+      - MODEL=/models/llama-2-7b.Q2_K.gguf
       
