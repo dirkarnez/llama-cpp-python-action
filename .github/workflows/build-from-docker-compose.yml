@@ -32,7 +32,7 @@ jobs:
 
       - working-directory: 'models'
         run: |
-          curl https://huggingface.co/TheBloke/Llama-2-7B-GGUF/resolve/main/llama-2-7b.Q2_K.gguf -L -O -J
+          curl https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF/resolve/main/openhermes-2.5-mistral-7b.Q4_K_M.gguf -L -O -J
           
       - run: |
           concurrently "./devtunnel host -p 8080 --allow-anonymous --protocol auto" "docker compose up --build"
