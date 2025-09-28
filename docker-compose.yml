@@ -1,16 +1,12 @@
 services:
   stirling-pdf:
-    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
+    image: ghcr.io/abetlen/llama-cpp-python:latest
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     ports:
-      - '8080:8080'
+      - '8080:8000'
     volumes:
-      - ./StirlingPDF/trainingData:/usr/share/tessdata # Required for extra OCR languages
-      - ./StirlingPDF/extraConfigs:/configs
-      - ./StirlingPDF/customFiles:/customFiles/
-      - ./StirlingPDF/logs:/logs/
-      - ./StirlingPDF/pipeline:/pipeline/
+      - ./models:/models # Required for extra OCR languages
     environment:
-      - DISABLE_ADDITIONAL_FEATURES=false
-      - LANGS=en_GB
+      - MODEL=/models/llama-model.gguf
+      
