@@ -1,5 +1,5 @@
 services:
-  stirling-pdf:
+  llama-cpp-python:
     image: ghcr.io/abetlen/llama-cpp-python:latest
     stdin_open: true # docker run -i
     tty: true        # docker run -t
